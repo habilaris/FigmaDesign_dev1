@@ -1,24 +1,33 @@
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     /* overflow: hidden; */
     margin: 0;
     padding: 0;
+    
 }
 
 body {
     font-family: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ebebeb;
+    background: #FFFFFF;
     /* padding: 20px; */
+}
+
+a {
+    outline: none;
 }
 
 
 .grid-parent {
     display: grid;
-    grid-template-rows: repeat(2, 110dvh);
+    grid-template-rows: 600px 160dvh 100vh;
 }
 
 .grid-items {
-    /* border: 2px solid black; */
+    /* border: 2px solid black;     */
 }
 
 #hero {
@@ -48,12 +57,14 @@ nav ul {
     display: flex;
     align-items: center;
     width: fit-content;
+    /* gap: 10px; */
     gap: 40px;
     margin-right: 40px;
 
 }
 
 nav li {
+    /* padding: 30px; */
     list-style: none;
 }
 
@@ -61,6 +72,13 @@ nav li {
 nav li a {
     text-decoration: none;
     color: #000000;
+    
+
+    transition: background 0.2s ease-in-out;
+
+    &:hover {
+        background: #ff5b5b49;
+    }
 }
 
 nav #nav-btn {
@@ -101,6 +119,7 @@ nav #nav-btn {
     margin-bottom: 35px;
 }
 
+/* Hero Input Section */
 
 .white-box {
     background: white;
@@ -112,11 +131,21 @@ nav #nav-btn {
     align-items: center;
 }
 
-.white-box>p {
-    color: hsl(0, 0%, 40%);
-    margin-left: 20px;
-    /* border: 2px solid black; */
-    /* margin-bottom: 0; */
+.white-box>input[type="text"] {
+    outline: none;
+    margin-left: 25px;
+    border: none;
+    width: 260px;
+    height: 58px;
+}
+
+
+
+.white-box input[type="text"]::placeholder {
+    color: hsla(0, 0%, 0%, 0.4);
+    font-family: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;;
+    font-size: 16px;
+    
 }
 
 .orange-box {
@@ -126,11 +155,17 @@ nav #nav-btn {
     height: 60px;
     position: absolute;
     right: 7px;
-    
+    /* margin-bottom: 0; */
+
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
 
+    &:hover {
+        background: #ff5b5b;
+    }
 }
 
 .orange-box>p {
@@ -139,3 +174,134 @@ nav #nav-btn {
     color: white;
 }
 
+
+/* ______________ Section 2 ____________________________ */
+
+#section-2 {
+    padding: 30px;
+    /* border: 2px solid black; */
+    display: flex;
+    /* width: 500px; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 999;
+}
+
+#section-2 > .title-content {
+    display: flex;
+    flex-direction: column;
+    width: 80dvw;  
+    /* border: 2px solid black; */
+    /* justify-content: center; */
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+#section-2 > .title-content > h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+#section-2 > .title-content > p {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+
+/* ____________________________ */
+.cards {
+    
+    display: grid;
+    /* height: 800px; */
+    grid-template-columns: repeat(3, 1fr);
+    /* border: 2px solid black; */
+    justify-content: space-between;
+    gap: 40px;
+    width: 1150px;
+
+    margin-bottom: 50px;
+}
+
+.card-items {
+    /* border: 2px solid black; */
+    height: 200px;
+    /* width: 350px; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: ; */
+}
+
+.card-items p {
+    /* border: 1px solid black; */
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    /* color: #000000; */
+}
+
+.card-items h3 {
+    font-size: 24px;
+    font-weight: 800;
+    /* line-height: 100%; */
+    letter-spacing: 0%;
+    margin-bottom: 5px;
+}
+
+
+/* ---------------------------------------------- */
+
+/* __ Section-3 (Orange One)___________________________________________ */
+
+#section-3 {
+    height: 376px;
+    width: 100dvw;
+    background: #fb3f3f;
+    z-index: 55;
+    position: relative;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    font-size: 32px;
+    font-weight: 800;
+}
+
+#section-3::before {
+    content: "";
+    height: 376px;
+    width: 100dvw;
+    filter: opacity(0.05);
+    position: absolute;
+    
+    z-index: 1;
+    background: url(images/mesh.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* ---------------------------------------- */
+/* ___ Section 4 ______________________________ */
+
+#section-4 {
+    height: 100vh;
+    position: relative;
+    z-index: 9999;
+    background: rgb(255, 255, 255);
+}
